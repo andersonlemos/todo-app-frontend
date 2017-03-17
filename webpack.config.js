@@ -28,11 +28,14 @@ module.export = {
             query:{
                 presets:['es2015','react'],
                 plugins:['transform-object-rest-spread']
-            },
-            {
-                test:/\.css$/,
-                loader: ExtractPlugin('style-loader','css-loader')       
             }
-        }]
+        },{
+                test:/\.css$/,
+                loader: ExtractPlugin.extract('style-loader','css-loader')
+            },{
+                test:/\.woff|.woff2|.ttf|.eot|.svg*.*$/,
+                loader:'file'
+            }
+        ]
     }
 

@@ -1,20 +1,20 @@
 const webpack =require('webpack')
 const ExtractPlugin = require('extract-text-webpack-plugin')
 
-module.export = {
+module.exports = {
     entry: './src/index.jsx',
     output:{
-        path: _dirname + '/public',
+        path: __dirname + '/public',
         filename: './app.js'
     },
     devServer:{
-        port:8080,
-        contentBase:'./public'
+        port:3004,
+        contentBase: './public'
     },
     resolve:{
         extensions:['','.js','.jsx'],
         alias:{
-            modules: __dirname + '/node_modules'
+            modules: __dirname + '/node_modules/'
         }
     },
     plugins:[
@@ -34,8 +34,8 @@ module.export = {
                 loader: ExtractPlugin.extract('style-loader','css-loader')
             },{
                 test:/\.woff|.woff2|.ttf|.eot|.svg*.*$/,
-                loader:'file'
-            }
-        ]
-    }
+                loader: 'file'
+            } ]
+         }
+}
 
